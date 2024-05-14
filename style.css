@@ -8,45 +8,19 @@
 :root {
     --bg-fundo: url('img/bg-desktop-light.jpg');
     --bg-resposivo: url('img/bg-mobile-light.jpg');
-    --img-btn: url('img/moon.png');
-    --github: url('img/github-dark.png');
-    --inst: url('img/inst-dark.png');
-    --youtube: url('img/yt-dark.png');
-    --linkedin: url('img/lkd-dark.png');
+    --img-btn: url('img/moon-stars.svg');
     --corBorda: #EAB2EA;
+    --bg-hover: #eb99eb34;
+    --color: #000;
 }
 
 .darkMode {
     --bg-fundo: url('img/bg-desktop.jpg');
     --bg-resposivo: url('img/bg-mobile.jpg');
-    --img-btn: url('img/sun.png');
-    --github: url('img/github-light.png');
-    --inst: url('img/int-light.png');
-    --youtube: url('img/yt-light.png');
-    --linkedin: url('img/lkd-light.png');
-    --corBorda: #ffffff13;
-    color: #fff;
-}
-
-.darkMode ul > li {
-    border: 1px solid #ffffffa6;
-    background-color: #ffffff13;
-}
-
-.darkMode ul > li:hover {
-    background-color: #410a3e;
-}
-
-.darkMode .formater:hover {
-    background-color: #410a3e;
-    outline: 1px solid #ffffffa6;
-}
-
-.darkMode .youtube {
-    margin-top: 10px;
-    padding: 0;
-    height: 24px;
-    width: 28px;
+    --img-btn: url('img/sun.svg');
+    --corBorda: #ffffff69;
+    --bg-hover: #ffffff69;
+    --color: #fff;
 }
 
 body {
@@ -57,6 +31,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    color: var(--color);
 }
 
 #perfil {
@@ -69,7 +44,7 @@ body {
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 15px;
-    border: 2px solid #000;
+    border: 2px solid var(--color);
 }
 
 header > p {
@@ -85,8 +60,8 @@ header > p {
 #btnFundo {
     width: 64px;
     height: 24px;
-    background: var(--corBorda);
-    border: 1px solid #ffffffa6;
+    background: var(--bg-hover);
+    border: 1px solid var(--corBorda);
     border-radius: 50px;
 }
 
@@ -107,22 +82,18 @@ header > p {
     animation: slide-in 0.4s forwards;
 }
 
-#btn:hover {
-    outline: 8px solid #ffffff13;
-}
-
 ul > li {
     max-width: 500px;
-    margin: 0 auto 15px;
-    border: 2px solid #eb99eb;
+    margin: 15px auto;
+    outline: 2px solid var(--corBorda);
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
 }
 
 ul li:hover {
-    background-color: #EAB2EA;
-    transition: 1s;
+    background-color: var(--bg-hover);
+    transition: 0.5s;
 }
 
 #social {
@@ -133,52 +104,26 @@ ul li:hover {
 }
 
 .formater {
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
     cursor: pointer;
-    border-radius: 10px;
 }
 
 .formater:hover {
-    background-color: #eab2ea5e;
-    outline: 1px solid #eb99eb;
-    transition: 0.5s;
+    background-color: var(--bg-hover);
+    border-radius: 50%;
 }
 
-.iconeSocial {
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    padding: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-.github {
-    background: var(--github);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.instagram {
-    background: var(--inst);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.youtube {
-    background: var(--youtube);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.linkedin {
-    background: var(--linkedin);
-    background-repeat: no-repeat;
-    background-size: cover;
+ion-icon {
+    font-size: 20px;
+    color: var(--color);
 }
 
 footer {
     margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 @keyframes slide-in {
@@ -201,10 +146,6 @@ footer {
 
 @media (max-width: 600px) {
     body {
-        background: var(--bg-resposivo);
-    }
-
-    .darkMode body {
         background: var(--bg-resposivo);
         background-repeat: no-repeat;
         background-size: cover;
